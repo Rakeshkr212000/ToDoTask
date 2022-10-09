@@ -35,6 +35,10 @@
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">To Do DONE</h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Super_Easy Task Management for you and Become focused, organized, and calm with Todoist.</p>
           </div>
+
+          <form method="POST" action="insert">
+            @csrf
+
           <div class="lg:w-1/2 md:w-2/3 mx-auto">
             <div class="flex flex-wrap -m-2">
               <div class="p-2 w-full">
@@ -44,10 +48,11 @@
                 </div>
               </div>
               <div class="p-2 w-full">
-                <button class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">SUBMIT</button>
+                <button type="submit" class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">SUBMIT</button>
               </div>
             </div>
           </div>
+        </form>
         </div>
       </section>
 
