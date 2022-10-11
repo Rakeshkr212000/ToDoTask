@@ -18,5 +18,7 @@ class storeController extends Controller
         DB::table('data')->insert($data);
 
         return back()->withErrors(['note added!!']);
-}
+    }
+
+    
 }

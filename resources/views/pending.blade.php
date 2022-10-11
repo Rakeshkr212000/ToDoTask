@@ -43,16 +43,19 @@
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Your Task</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Time is Running-_-Complete The Task.</p>
             </div>
+
             @foreach ($data as $datas)
-                <div class="flex flex-wrap">
-                    <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                <div class="flex flex-warp -m-4">
+                    <div class="xl:w-1/3 md:w-1/2 p-4">
+
                         <div
                             class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                             <a href="#">
-                                <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $datas->message }}</h3>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $datas->message }}</h5>
                             </a>
-                            <a href="#"
+                            
+                            <a href="{{ url('/complete', $datas->id) }}"
                                 class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Completed!
                                 <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor"
@@ -63,16 +66,12 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+
                     </div>
                 </div>
             @endforeach
-
-        </div>
         </div>
     </section>
-
 
 </body>
 

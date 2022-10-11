@@ -14,4 +14,18 @@ class showController extends Controller
 
         return view('pending')->with("data",$datashow);
     }
+
+    public function completedData(){
+        $datashow['data']= DB::table('data')->where('complete', 1)->get();
+
+
+        return view('completed')->with("cData",$datashow);
+    }
+
+    public function completeTodo($id){
+        
+        DB::table('data')->where('id', $id)->update(['complete' => '1']);
+        return redirect()->back()->with('message', 'Todo completed.');
+        
+      }
 }

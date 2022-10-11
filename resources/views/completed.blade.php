@@ -17,11 +17,11 @@
             <span class="ml-3 text-xl">TO_DO_TASK</span>
           </a>
           <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a href="{{ route('home')}}" class="mr-5 hover:text-gray-900">Create</a>
-            <a href="{{ route('pending')}}" class="mr-5 hover:text-gray-900">Pending</a>
-            <a href="{{ route('completed')}}" class="mr-5 hover:text-gray-900">Completed</a>
+            <a href="{{ route('home') }}" class="mr-5 hover:text-gray-900">Create</a>
+                <a href="{{ route('pending') }}" class="mr-5 hover:text-gray-900">Pending</a>
+                <a href="{{ route('completed') }}" class="mr-5 hover:text-gray-900">Completed</a>
           </nav>
-          <a href="{{ route('home')}}" type="button" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Home
+          <a href="" type="button" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Home
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
@@ -36,7 +36,7 @@
             <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Your Finished Task</h1>
             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Enabled Cloud_Storage for your Finished To Do List.</p>
           </div>
-
+          @foreach($cData['data'] as $comp)
           <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
             <div class="p-2 sm:w-1/2 w-full">
               <div class="bg-gray-100 rounded flex p-4 h-full items-center">
@@ -44,10 +44,11 @@
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
-                <span class="title-font font-medium">Authentic Cliche Forage</span>
+                <span class="title-font font-medium">{{ $comp->message }}</span>
               </div>
             </div>
           </div>
+          @endforeach
         </div>
       </section>
 </body>

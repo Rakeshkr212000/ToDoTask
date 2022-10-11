@@ -19,5 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','App\Http\Controllers\HomeController@homepage')->name('home');
 Route::get('pending','App\Http\Controllers\showController@showdata')->name('pending');
-Route::get('completed','App\Http\Controllers\HomeController@completed')->name('completed');
+
 Route::post('insert','App\Http\Controllers\storeController@insert');
+
+Route::get('completed','App\Http\Controllers\showController@completedData')->name('completed');
+
+Route::get('complete/{id}', 'showController@completeTodo')->name('complete');
