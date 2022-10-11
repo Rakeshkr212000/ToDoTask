@@ -24,4 +24,4 @@ Route::post('insert','App\Http\Controllers\storeController@insert');
 
 Route::get('completed','App\Http\Controllers\showController@completedData')->name('completed');
 
-Route::get('complete/{id}', 'showController@completeTodo')->name('complete');
+Route::get('complete/{id}', 'App\Http\Controllers\showController@completeTodo')->name('complete');
