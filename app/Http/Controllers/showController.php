@@ -27,5 +27,11 @@ class showController extends Controller
         DB::table('data')->where('id', $id)->update(['complete' => '1']);
         return redirect()->back()->with('message', 'Todo completed.');
         
-      }
+    }
+
+    public function deleteAll()
+    {
+      DB::table('data')->where('complete', 1)->delete();
+      return redirect()->back()->with('message', 'Deleted Tasks');
+    }
 }

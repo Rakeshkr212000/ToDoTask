@@ -25,3 +25,5 @@ Route::post('insert','App\Http\Controllers\storeController@insert');
 Route::get('completed','App\Http\Controllers\showController@completedData')->name('completed');
 
 Route::get('complete/{id}', 'App\Http\Controllers\showController@completeTodo')->name('complete');
+
+Route::get('delete', 'App\Http\Controllers\showController@deleteAll')->name('delete');;
